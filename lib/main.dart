@@ -10,12 +10,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Películas',
       initialRoute: 'home',
       routes: {
         'home': ( _ ) => HomeScreen(),
         'details': ( _ ) => DetailsScreen()
       },
+      theme: ThemeData.light().copyWith(
+        appBarTheme: const AppBarTheme(
+          color: Color.fromARGB(255, 149, 10, 0),
+          centerTitle: true
+        )
+      ),
     );
   }
 }
