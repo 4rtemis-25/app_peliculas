@@ -1,6 +1,7 @@
 import 'package:app_peliculas/providers/movies_provider.dart';
 import 'package:app_peliculas/screens/details_screen.dart';
 import 'package:app_peliculas/screens/home_screen.dart';
+import 'package:app_peliculas/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,9 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'Películas',
       initialRoute: 'home',
       routes: {'home': (_) => HomeScreen(), 'details': (_) => DetailsScreen()},
-      theme: ThemeData.light().copyWith(
-          appBarTheme: const AppBarTheme(
-              color: Color.fromARGB(255, 149, 10, 0), centerTitle: true)),
+      theme: AppTheme.darkTheme
     );
   }
 }

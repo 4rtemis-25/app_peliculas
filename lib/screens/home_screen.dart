@@ -1,5 +1,7 @@
+import 'package:app_peliculas/providers/movies_provider.dart';
 import 'package:app_peliculas/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
    
@@ -7,10 +9,12 @@ class HomeScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+
+    final moviesProvider = Provider.of<MoviesProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Películas En Cartelera'),
-        elevation: 0,
         actions: [
           IconButton(
           onPressed: () {},
@@ -18,11 +22,15 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: const Column(
+      body: Column(
          children: [
-          CardSwiperScreen(),
+          CardSwiperScreen(movies: moviesProvider.mostarMovies ),
 
-          MovieSliderScreen()
+          MovieSliderScreen(
+            movies: moviesProvider.popularMovies,
+            title: 'Populares',
+            onNextPage: () => moviesProvider.getOnPopularMovies(),
+            )
          ],
       ),
     );
