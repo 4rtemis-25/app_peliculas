@@ -15,7 +15,7 @@ class MovieSliderScreen extends StatefulWidget {
 
 class _MovieSliderScreenState extends State<MovieSliderScreen> {
 
-  final ScrollController scrollController = new ScrollController();
+  final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
@@ -82,7 +82,7 @@ class _MoviePoster extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () => Navigator.pushNamed(
-              context, 'details', arguments: 'movie-details'
+              context, 'details', arguments: movie
               ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
