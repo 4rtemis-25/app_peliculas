@@ -1,4 +1,5 @@
 import 'package:app_peliculas/providers/movies_provider.dart';
+import 'package:app_peliculas/search/search_delegate.dart';
 import 'package:app_peliculas/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,10 @@ class HomeScreen extends StatelessWidget {
         title: Text('Películas En Cartelera'),
         actions: [
           IconButton(
-          onPressed: () {},
+          onPressed: () => 
+          showSearch(
+          context: context,
+          delegate: MovieSearchDelegate()),
           icon: const Icon(Icons.search_outlined)
           )
         ],
