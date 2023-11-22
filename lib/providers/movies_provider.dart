@@ -38,7 +38,7 @@ class MoviesProvider extends ChangeNotifier {
     return response.body;
   }
 
-  //TRAER MOVIES ONPLAYING
+  //TRAER MOVIES ONPLAYING  
   getOnDisplayMovies() async {
     final jsonData = await _getJsonMovies('3/movie/now_playing');
     final nowPlaying = NewPlayingResponse.fromRawJson(jsonData);
